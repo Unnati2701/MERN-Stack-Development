@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Admission Form</title>
+
+    <style>
+
+        .myform{
+            color: white;
+            background-color: rgb(166, 112, 218);
+            display: block;
+            
+        }
+
+        .mylabel{
+            display: inline-block;
+            margin: 6px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>Student Admission Form</h1>
+    <hr style="height: 1px; background-color: black;">
+    <div class="myform">
+        <form>
+            <div class="mylabel">
+            <label for="name">Student Name</label>
+            <input type="text" id="name">
+            <br>
+            <br>
+            <label for="">Date of Birth</label>
+            <input type="date">
+            <br>
+            <br>
+            <label for="">Contact Number</label>
+            <input type="tel">
+            <br>
+            <br>
+            <label for="">Email</label>
+            <input type="email">
+            <br>
+            <br>
+            <label for="gender">Gender</label>
+            <input type="radio" name="gender" value="male">Male
+            <input type="radio" name="gender" value="female">Female
+            <input type="radio" name="gender" value="female">Transgender
+            <br>
+            <br>
+            <label for="">Address</label>
+            <input type="text" style="height:75px; width:300px;">
+            <br>
+            <br>
+            <label for="pincode">Pincode</label>
+            <input type="text" maxlength="6">
+            <br>
+            <br>
+            <label for="">Select State</label>
+            <select>
+                <option>Uttar Pradesh</option>
+                <option>Delhi</option>
+                <option>Bihar</option>
+                <option>Maharastra</option>
+            </select>   
+            <br>
+            <br>
+        </div>
+            <table>
+                <caption>Qualifications</caption>
+                <tr>
+                    <th>Examination</th>
+                    <th>Board</th>
+                    <th>Percentage</th>
+                    <th>Year of Passing</th>
+                </tr>
+                <tr>
+                    <td>High School</td> 
+                    <td>
+                        <label for=""></label>
+                        <input type="text" list="Board">
+                        <datalist id="Board">
+                            <option>CBSE</option>
+                            <option>ICSE</option>
+                            <option>UP Board</option>
+                            <option>MP Board</option>
+                        </datalist>
+                    </td>
+                    <td>
+                        <label for=""></label>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <label for=""></label>
+                        <input type="month">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Intermediate</td> 
+                    <td>
+                        <label for=""></label>
+                        <input type="text" list="Board">
+                        <datalist id="Board">
+                            <option>CBSE</option>
+                            <option>ICSE</option>
+                            <option>UP Board</option>
+                            <option>MP Board</option>
+                        </datalist>
+                    </td>
+                    <td>
+                        <label for=""></label>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <label for=""></label>
+                        <input type="month">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Graduation</td> 
+                    <td>
+                        <label for=""></label>
+                        <input type="text" list="Graduation">
+                        <datalist id="Graduation">
+                            <option>B.Tech</option>
+                            <option>B.Com</option>
+                            <option>BBA</option>
+                            <option>B.Pharm</option>
+                        </datalist>
+                    </td>
+                    <td>
+                        <label for=""></label>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <label for=""></label>
+                        <input type="month">
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <label for="course">Courses Applied For</label>
+            <input type="radio" name="course" value="M.Tech">M.Tech
+            <input type="radio" name="course" value="M.Com">M.Com
+            <input type="radio" name="course" value="MBA">MBA
+            <input type="radio" name="course" value="M.Pharm">M.Pharm
+            <br>
+            <br>
+            <button>Submit</button>
+            <button>Reset</button>
+
+        </form>
+    </div>
+</body>
+</html>
