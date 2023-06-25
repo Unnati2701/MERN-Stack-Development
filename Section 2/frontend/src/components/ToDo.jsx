@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { toast } from 'react-hot-toast';
 import { motion } from 'framer-motion';
 
@@ -6,12 +6,16 @@ const ToDo = () => {
 
     const [todoList, setTodoList] = useState([]);
 
+    const inputRef = useRef(null);
+
     const addTask = (e) => {
+        if(e.target.value === "") return;
         if(e.code === 'Enter') {
             console.log(e.target.value);
             console.log('Task added');
             setTodoList([...todoList, {text: e.target.value, completed: false}]);
             console.log(todoList);
+            inputRef.current.value = "";
         }
     };
 
@@ -46,7 +50,8 @@ const ToDo = () => {
                     <input 
                         type="text" 
                         className='form-control' 
-                        placeholder='Enter Task' 
+                        placeholder='Enter Task'
+                        ref={inputRef} 
                         onKeyDown={addTask} 
                     />                    
                 </div>
