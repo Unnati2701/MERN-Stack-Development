@@ -1,7 +1,8 @@
 const express = require('express'); //req
 const router = express.Router(); 
+const Model = require('../models/userModel');
 
-router.get('/add', (req, res) => {
+router.post('/add', (req, res) => {
     res.send('Response from  user add server');
 });
 
