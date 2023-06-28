@@ -10,4 +10,4 @@ mongoose.connect(uri)
     console.error(err);
 });
 
-module.exports = mongoose
+module.exports = mongoose;

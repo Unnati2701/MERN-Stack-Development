@@ -7,6 +7,8 @@ const port = 5000;
 const userRouter = require('./router/userRouter'); //import router from userRouter
 const productRouter = require('./router/productRouter'); //import router from productRouter
 
+app.use(express.json());// middleware 
+
 app.use('/user', userRouter); //middleware
 app.use('/products', productRouter); //middleware
 
