@@ -5,11 +5,13 @@ const app = express(); // initializing express app
 const port = 5000;
 
 const userRouter = require('./router/userRouter'); //import router from userRouter
+const feedbackRouter = require('./router/feedbackRouter'); //import router from userRouter
 const productRouter = require('./router/productRouter'); //import router from productRouter
 
 app.use(express.json());// middleware 
 
 app.use('/user', userRouter); //middleware
+app.use('/feedback', feedbackRouter); //middleware
 app.use('/products', productRouter); //middleware
 
 //Routes

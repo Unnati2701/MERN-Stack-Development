@@ -23,8 +23,13 @@ router.get('/getall', (req, res) => {
     });
 });
 
-router.get('/delete', (req, res) => {
-    res.send('Response from  user delete server');
+router.delete('/delete/:id', (req, res) => {
+    Model.findByIdAndDelete(req.params.id)
+    .then((result) => {
+        res.json(result);
+    }).catch((err) => {
+        res.status(500).json(err);
+    });
 });
 
 router.get('/getbyid/:id', (req, res) => {
@@ -36,8 +41,13 @@ router.get('/getbyid/:id', (req, res) => {
     });
 });
 
-router.get('/update', (req, res) => {
-    res.send('Response from  user update server');
+router.put('/update/:id', (req, res) => {
+    Model.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then((result) => {
+        res.json(result);
+    }).catch((err) => {
+        res.status(500).json(err);
+    });
 });
 
 router.get('/getbyemail/:email', (req, res) => {
