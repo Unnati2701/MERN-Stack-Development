@@ -1,15 +1,18 @@
 import { useFormik } from "formik";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import * as Yup from 'yup';
 
 const signupSchema = Yup.object().shape({
-  name: Yup.string().name('Invalid email').required('Email is Required'),
   email: Yup.string().email('Invalid email').required('Email is Required'),
   password: Yup.string().required('Password is Required')
 });
 
 const Signup = () => {
   // initializing formik
+
+  const navigate = useNavigate();
 
   const signupForm = useFormik({
     initialValues: {
@@ -27,7 +30,17 @@ const Signup = () => {
       });
 
       console.log(res.status);
+
+      if(res.status === 200){
+        Swal.fire({
+          icon : 'success',
+          title : 'User Registered Successfully',
+          text: 'Please Login to Continue'
+        });
+        navigate('/login');
+      }
     },
+
     validationSchema: signupSchema
   });
 

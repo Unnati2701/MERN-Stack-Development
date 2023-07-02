@@ -62,4 +62,17 @@ router.get('/getbyemail/:email', (req, res) => {
         });
 });
 
+router.post('/authenticate', (req, res) => {
+    Model.findOne(req.body)
+    .then((result) => {
+        if(result){
+            res.json(result);
+        } else{
+            res.status(500).json({message: 'Invalid credentials'});
+        }
+    }).catch((err) => {
+        res.status(500).json(err);
+    });
+});
+
 module.exports = router; // export router

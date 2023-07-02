@@ -15,9 +15,34 @@ const Login = () => {
       email: '',
       password: ''
     },
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       console.log(values);
-    },
+
+      const res = await fetch('http://localhost:5000/user/authenticate',{
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(values)
+      });
+
+      console.log(res.status);
+
+      if (res.status === 200) {
+        Swal.fire({
+          icon : 'success',
+          title : 'User Logged in Successfully',
+        })
+      }else if(res.status === 401){
+        Swal.fire({
+          icon : 'error',
+          title : 'Invalid Credentials',
+      })
+    } else{
+      Swal.fire({
+        icon : 'error',
+        title : 'Something went wrong'
+      })
+    }
+  },
     validationSchema : loginSchema
   });
 
