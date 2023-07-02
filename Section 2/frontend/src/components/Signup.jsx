@@ -20,6 +20,7 @@ const Signup = () => {
       email: "",
       password: "",
     },
+
     onSubmit: async (values) => {
       console.log(values);
 
@@ -46,47 +47,27 @@ const Signup = () => {
 
   return (
     <div>
-      <div className="col-md-3 mx-auto d-flex align-items-center vh-100">
-        <div className="card w-100 shadow-lg">
-          <div className="card-body p-5">
-            <h3 className="my-5 text-center">SignUp Here</h3>
+      <div className="col-md-3 mx-auto">
+        <div className="card">
+          <div className="card-body">
+            <h2 className="my-5 text-center">SignUp Form</h2>
 
             <form onSubmit={signupForm.handleSubmit}>
-            <label htmlFor="">Name</label>
-              <span style={{marginLeft: '10px', fontSize: 10, color: 'red'}}>{signupForm.errors.name}</span>
-              <input
-                type="name"
-                className="form-control mb-4"
-                name="name"
-                onChange={signupForm.handleChange}
-                value={signupForm.values.name}
-              />
-
+              <label htmlFor="">Name</label>
+              <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{signupForm.touched.name && signupForm.errors.name}</span>
+              <input className="form-control mb-3" onChange={signupForm.handleChange} value={signupForm.values.name} name="name" />
+              
               <label htmlFor="">Email</label>
-              <span style={{marginLeft: '10px', fontSize: 10, color: 'red'}}>{signupForm.errors.email}</span>
-              <input
-                type="email"
-                className="form-control mb-4"
-                name="email"
-                onChange={signupForm.handleChange}
-                value={signupForm.values.email}
-              />
-
+              <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{signupForm.touched.email && signupForm.errors.email}</span>
+              <input className="form-control mb-3" onChange={signupForm.handleChange} value={signupForm.values.email} name="email" />
 
               <label htmlFor="">Password</label>
-              <span style={{marginLeft: '10px', fontSize: 10, color: 'red'}}>{signupForm.errors.password}</span>
-              <input
-                type="password"
-                className="form-control mb-4"
-                name="password"
-                onChange={signupForm.handleChange}
-                value={signupForm.values.password}
-              />
+              <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{signupForm.touched.password && signupForm.errors.password}</span>
+              <input className="form-control mb-3" type="password" onChange={signupForm.handleChange} value={signupForm.values.password} name="password" />
 
-              <button type="submit" className="my-5 btn btn-primary w-100">
-                Submit
-              </button>
+              <button type="submit" className="btn btn-primary mt-4">Login</button>
             </form>
+            
           </div>
         </div>
       </div>

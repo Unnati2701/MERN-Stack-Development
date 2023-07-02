@@ -11,6 +11,7 @@ import { Toaster} from 'react-hot-toast';
 import StateManagement from './components/StateManagement';
 import ToDo from './components/ToDo';
 import { AnimatePresence } from 'framer-motion';
+import ManageUser from './components/ManageUser';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route element={ <StateManagement />} path='state' />
             <Route element={ <ToDo />} path='todo' />
             <Route element={ <Notfound /> } path='*' />
+            <Route element={ <ManageUser /> } path='manage' />            
           </Routes>
         </BrowserRouter>
       </AnimatePresence>
